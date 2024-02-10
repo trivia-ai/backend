@@ -36,7 +36,7 @@ def hello_http(request):
                 if existing_user and bcrypt.checkpw(password.encode('utf-8'), existing_user['password']):
                     return jsonify({"email": existing_user["email"]})
                 else:
-                    return "Not Found"
+                    return "Incorrect password"
 
             except Exception as e:
                 print(e)
